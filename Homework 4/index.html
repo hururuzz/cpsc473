@@ -1,0 +1,40 @@
+<html>
+    <head>  
+    </head>
+    <body>
+        <div id="actorList">
+            <ul class="demo-list-control mdl-list">
+            </ul>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield">
+            <input type="text" class="mdl-textfield__input" width="20px" id="nameInputField" placeholder="Type name to add"/>
+        </div>
+        <div>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="addActor()">Add</button>
+        </div>
+    </body>
+    <!-- List with avatar and controls -->
+    <style>
+        .demo-list-control {
+        width: 300px;
+        }
+
+        .demo-list-radio {
+        display: inline;
+        }
+        
+        .demo-list-action {
+        width: 300px;
+        }
+        
+        .mdl-textfield__input{
+        width: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-pink.min.css">
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js" type="text/javascript"></script>
+    <script defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>
+    <!--<script src="http://localhost:3000/Actors?callback=getActors" type="text/javscript" ></script>-->
+    <script src="app.js" type="text/javascript"></script>
+</html>
