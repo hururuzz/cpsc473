@@ -2,7 +2,7 @@ var data = require('./db.json');
 
 var http = require('http');
 var express = require('express');
-var bodyParser = require('body-parser');
+var bodyParser = require("body-parser")
 var app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -13,35 +13,23 @@ app.listen(3000, function(){
 });
 
 app.post('/flip', function(req, res){
-    var side = req.body.call;
-    var result = "win";
-    //console.log(side);
+    var side = req.body;
+    console.log(side);
     
-    //make random integer number
-    var randomNumber = (Math.random() * 10).toFixed(0);
-    
-    //if the number is even, random side would be head and tail for odd
-    if(randomNumber%2 === 0)
-        var randomSide = "heads";
+    /*
+    if((Math.random() * 10) % 2 !== 0)
+        var side = "head";
     else
-        var randomSide = "tails";
+        var side = "tail";
         
-    if (side === randomSide)
-    {
-        result = "win";
-        data.stats.wins += 1;
-    }
+    if (call === side)
+        data.result.push("win");
     else
-    {
-        result = "lose";
-        data.stats.loses += 1;
-    }
-       
-    console.log("Call: " + side + " | " + "Random Side: " + randomSide + " | Result: " + result);
+        data.result.push("lose");
+     */
     
 });
 
 app.get('/stats',function(req, res){    
-    //console.log("Wins: " + data.stats.wins + " | " + "Loses: " + data.stats.loses);
     console.log(data.stats);
 });
