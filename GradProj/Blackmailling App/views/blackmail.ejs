@@ -1,0 +1,54 @@
+<% include layout %>
+
+<div ng-controller="BlackmailController">
+    <div class="container">
+        <h2 class="h2">Create a blackmail</h2>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="container">
+                <form enctype="multipart/form-data" ng-submit="createBlackmail()">
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" class="form-control" ng-model="title">
+                    </div>
+                    <div class="form-group">
+                        <label>Blackmailer Name</label>
+                        <input type="text" class="form-control" ng-model="blackmailerName">
+                    </div>
+                    <div class="form-group">
+                        <label>Blackmailer Email</label>
+                        <input type="text" class="form-control" ng-model="blackmailerEmail">
+                    </div>
+                    <div class="form-group">
+                        <label>Recipient Email</label>
+                        <input type="text" class="form-control" ng-model="recipientEmail">
+                    </div>
+                    <div class="form-group">
+                        <label>Incriminating Picture</label>
+                        <input type="file" class="form-control" id="incriminatingPicture" ng-model="incriminatingPicture">
+                    </div>
+                    <div class="form-group">
+                        <label>Demands</label>
+                        <input type="text" class="form-control" ng-model="demands">
+                    </div>
+                    <div class="form-group">
+                        <label>Release Date</label>
+                        <div class="form-group">
+                            <input type="date" class="form-control, input-sm" style="width:150px" datepicker-popup ng-model="releaseDate" is-open="status.opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Release Time</label>
+                        <div class="form-group">
+                            <uib-timepicker ng-model="releaseTime" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
